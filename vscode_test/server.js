@@ -1,11 +1,11 @@
 const http = require("http");
-const PORT = 3000;
-const html = require("fs").readFileSync("./test.html");
+const PORT = 8000;
+const html = require("fs").readFileSync("./index.html");
 
 // webサーバを作る
 const server = http.createServer((req, res) => {
     // ブラウザからアクセスが来た時の処理
-    res.writehead(200, {"Conten-Type": "text/html"});
+    res.writeHead(200, {"Content-Type": "text/html"});
     res.write(html);
     res.end();
 });
